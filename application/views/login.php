@@ -30,21 +30,26 @@
         </div>
         <div class="form formLogin">
             <h2>Faça seu login</h2>
-            <form>
-                <input type="text" placeholder="Username" />
-                <input type="password" placeholder="Password" />
-                <div class="remember text-left">
-                    <div class="checkbox checkbox-primary">
-                        <input id="checkbox2" type="checkbox" checked>
-                        <label for="checkbox2">
-                            Lembrar
-                        </label>
-                    </div>
-                </div>
-                <button>Entrar</button>
-                <div class="forgetPassword"><a href="javascript:void(0)">Esqueceu a senha?</a>
-                </div>
-            </form>
+            
+            <?php
+                echo form_open('login/autenticar');
+                $email= array(
+                    'type' => 'text',
+                    'placeholder' => 'email',
+                    'name' => 'email'
+                );
+                $senha= array(
+                    'type' => 'password',
+                    'placeholder' => '********',
+                    'name' => 'senha'
+                );
+                
+                echo form_input($email);
+                echo form_input($senha);
+                echo '<button>Entrar</button>';
+                echo form_close();
+            ?>
+            <div class="forgetPassword"><a href="javascript:void(0)">Esqueceu a senha?</a>
         </div>
         <div class="form formRegister">
             <h2>Criar uma conta</h2>
